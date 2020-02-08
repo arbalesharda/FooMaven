@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.google.code.maven-play-plugin.com.google.code.eamelink-mockito</groupId>
+    <artifactId>mockito-all</artifactId>
+    <version>1.9.1-20110911</version>
+
+    <name>Mockito</name>
+    <description>Mock objects library for java, modified to allow cache disabling</description>
+    <url>http://code.google.com/r/eamelink-mockito</url>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>http://code.google.com/p/mockito/wiki/License</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>http://code.google.com/p/mockito/source/browse/</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>szczepiq</id>
+            <name>Szczepan Faber</name>
+        </developer>
+    </developers>
+
+</project>
