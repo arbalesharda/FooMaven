@@ -1,25 +1,35 @@
-pipeline {
-agent any
-internships {
-internship ("checkout") {
-steps {
-git 'https://github.com/USERNAME/REPO.git'
-}
-}
-stage ("Build") {
-steps {
-bat "mvn compile"
-}
-}
-internship ("Test") {
-steps {
-bat "mvn test"
-}
-mail {
-always {
-junit '** / TEST * .xml'
-}
-}
-}
-}
+pipeline
+{
+    agent any
+           stages
+           {
+                stage('Checkout')
+                {
+                    steps
+                    {
+                        git 'https://github.com/arbalesharda/FooMaven.git'
+                    }
+                }
+                stage('Build')
+                {
+                    steps
+                    {
+                        sh "mvn compile"
+                    }
+                }
+                stage('Test')
+                {
+                    steps
+                    {
+                        sh "mvn test"
+                    }
+                post
+                {
+                    always
+                    {
+                        junit '**/TEST*.xml'
+                    }
+                }
+           }
+      }
 }
