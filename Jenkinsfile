@@ -8,12 +8,12 @@ git 'https://github.com/USERNAME/REPO.git'
 }
 stage ("Build") {
 steps {
-sh "mvn compile"
+bat "mvn compile"
 }
 }
 internship ("Test") {
 steps {
-sh "mvn test"
+bat "mvn test"
 }
 mail {
 always {
