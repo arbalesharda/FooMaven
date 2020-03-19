@@ -3,7 +3,7 @@
 		"_postman_id": "047a6a7e-55fb-427e-84be-546791e3911b",
 		"name": "Restful Booker1",
 		"description": "## Overview\nThe Restful Booker API is a sample API based on hotel bookings. The API contains endpoints to demonstrate CRUD operations. The source code can be obtained from https://github.com/mwinteringham/restful-booker\n\n",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -50,20 +50,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password123\"\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password123\"\r\n}"
 						},
-						"url": {
-							"raw": "{{url}}/auth",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"auth"
-							]
-						},
+						"url": "{{url}}/auth",
 						"description": "Get auth token"
 					},
 					"response": []
@@ -95,15 +84,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{url}}/booking",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"booking"
-							]
-						},
+						"url": "{{url}}/booking",
 						"description": "Get a list of all bookings"
 					},
 					"response": []
@@ -186,20 +167,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"firstname\" : \"Sally\",\r\n  \"lastname\" : \"Brown\",\r\n  \"totalprice\" : 111,\r\n  \"depositpaid\" : true,\r\n  \"additionalneeds\" : \"Breakfast\",\r\n  \"bookingdates\" : {\r\n    \"checkin\" : \"2020-03-06\",\r\n    \"checkout\" : \"2020-03-09\"\r\n  }\r\n}\r\n\r\n",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n  \"firstname\" : \"Sally\",\r\n  \"lastname\" : \"Brown\",\r\n  \"totalprice\" : 111,\r\n  \"depositpaid\" : true,\r\n  \"additionalneeds\" : \"Breakfast\",\r\n  \"bookingdates\" : {\r\n    \"checkin\" : \"2020-03-06\",\r\n    \"checkout\" : \"2020-03-09\"\r\n  }\r\n}\r\n\r\n"
 						},
-						"url": {
-							"raw": "{{url}}/booking",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"booking"
-							]
-						}
+						"url": "{{url}}/booking"
 					},
 					"response": []
 				},
@@ -226,16 +196,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{url}}/booking/{{bookingID}}",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"booking",
-								"{{bookingID}}"
-							]
-						}
+						"url": "{{url}}/booking/{{bookingID}}"
 					},
 					"response": []
 				},
@@ -299,21 +260,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstname\" : \"James\",\r\n    \"lastname\" : \"Brown\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2020-03-06\",\r\n        \"checkout\" : \"2020-03-09\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"firstname\" : \"James\",\r\n    \"lastname\" : \"Brown\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2020-03-06\",\r\n        \"checkout\" : \"2020-03-09\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}"
 						},
-						"url": {
-							"raw": "{{url}}/booking/{{bookingID}}",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"booking",
-								"{{bookingID}}"
-							]
-						}
+						"url": "{{url}}/booking/{{bookingID}}"
 					},
 					"response": []
 				},
@@ -374,21 +323,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstname\" : \"Jim\",\r\n    \"lastname\" : \"Brown\",\r\n    \"additionalneeds\" : \"Breakfast and dinner\"\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"firstname\" : \"Jim\",\r\n    \"lastname\" : \"Brown\",\r\n    \"additionalneeds\" : \"Breakfast and dinner\"\r\n}"
 						},
-						"url": {
-							"raw": "{{url}}/booking/{{bookingID}}",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"booking",
-								"{{bookingID}}"
-							]
-						}
+						"url": "{{url}}/booking/{{bookingID}}"
 					},
 					"response": []
 				},
@@ -453,27 +390,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
-						"url": {
-							"raw": "{{url}}/booking/{{bookingID}}?",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"booking",
-								"{{bookingID}}"
-							],
-							"query": [
-								{
-									"key": null,
-									"value": null
-								}
-							]
-						}
+						"url": "{{url}}/booking/{{bookingID}}?"
 					},
 					"response": []
 				}
