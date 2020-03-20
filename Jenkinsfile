@@ -10,14 +10,14 @@ pipeline
                         git 'https://github.com/arbalesharda/FooMaven.git'
                     }
                 }
-                stage('Build')
+                stage('Junit Build')
                 {
                     steps
                     {
                        sh "mvn compile"
                     }
                 }
-                stage('Test')
+                stage('Junit Test')
                 {
                     steps
                     {
@@ -32,7 +32,7 @@ pipeline
                 }
            }
 
-           stage('newman') {
+           stage('API Testing with Newman') {
                  steps {
                       sh 'newman run Restful_Booker.postman_collection.json --environment Restful_Booker.postman_environment.json --reporters junit'
                        }
@@ -43,7 +43,7 @@ pipeline
                              }
 
             }
-           stage('robot') {
+           stage('Robot Framework System tests with Selenium') {
                        steps {
                            sh 'robot -d results --variable BROWSER:headlesschrome Infotive.robot'
                        }
