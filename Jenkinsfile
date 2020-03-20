@@ -31,11 +31,7 @@ pipeline
                     }
                 }
            }
-            stage('Create coverage report') {
-                     steps {
-                         sh "mvn cobertura:cobertura"
-                          }
-                      }
+            
            stage('API Testing with Newman') {
                  steps {
                       sh 'newman run Restful_Booker.postman_collection.json --environment Restful_Booker.postman_environment.json --reporters junit'
