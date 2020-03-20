@@ -2,7 +2,7 @@
 Library     SeleniumLibrary
 Library      DateTime
 Test Setup  Start Browser And Maximize
-Test Teardown   Close  Browser
+Test Teardown   Close Browser
 
 *** Variables ***
 
