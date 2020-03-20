@@ -78,10 +78,11 @@ pipeline
       }
 
      post {
-             always {
-                     junit '**/*xml'
-                     step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
-
-             }
+              always {
+                 junit '**/TEST*.xml'
+                 emailext attachLog: true, attachmentsPattern: '**/TEST*xml',
+                 body: 'Bod-DAy!', recipientProviders: [culprits()], subject:
+                 '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
+              }
          }
-}
+     }
