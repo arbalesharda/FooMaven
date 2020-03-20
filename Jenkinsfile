@@ -10,14 +10,14 @@ pipeline
                         git 'https://github.com/arbalesharda/FooMaven.git'
                     }
                 }
-                stage('Junit Build')
+                stage(' Build')
                 {
                     steps
                     {
                        sh "mvn compile"
                     }
                 }
-                stage('Junit Test')
+                stage(' Test')
                 {
                     steps
                     {
@@ -31,7 +31,11 @@ pipeline
                     }
                 }
            }
-
+            stage('Create coverage report') {
+                     steps {
+                         sh "mvn cobertura:cobertura"
+                          }
+                      }
            stage('API Testing with Newman') {
                  steps {
                       sh 'newman run Restful_Booker.postman_collection.json --environment Restful_Booker.postman_environment.json --reporters junit'
