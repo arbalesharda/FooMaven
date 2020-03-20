@@ -41,28 +41,3 @@ Gherkin Syntax Test Case For Date Selection
        When Select Date And Click On Continue Button
        Then Car Details Page Should Be Displayed
 
-Test case for checking invalid boundary value for card number
-       [Documentation]                  Checking the invalid input for card number
-       [Tags]                           Test 4
-      Entering Valid Email And Valid Password
-      Select Date And Click On Continue Button
-      Select the Make and the Passengers from the DropDown
-      Testing Boundary Value for the Card Number 15 digits(invalid)
-
-Test case for booking a car (long test case )
-     [Documentation]                  Booking a car
-     [Tags]                           Test 5
-
-     Entering Valid Email And Valid Password
-     Select Date And Click On Continue Button
-     Select the Make and the Passengers from the DropDown
-     Provides the Card details for payment
-
-
-Page Navigation While Booking a Car (VG_testcase_Gherkin Syntax))
-       [Documentation]                  Page Navigation
-       [Tags]                           Test 6
-        Given User is on the confirm booking Page
-        When User provides card credentials and click on continue button
-        Then User directs to the booking confirmation page
-        
