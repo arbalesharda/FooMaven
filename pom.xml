@@ -33,6 +33,10 @@
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
                 <configuration>
+                    <formats>
+                        <format>html</format>
+
+                    </formats>
                     <instrumentation>
                         <excludes>
                             <exclude>*.json</exclude>
@@ -51,7 +55,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>
