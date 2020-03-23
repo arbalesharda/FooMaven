@@ -107,11 +107,9 @@ Car Details Page Should Be Displayed
 
 Select the Make and the Passengers from the DropDown
     Click Button                  xpath://*[@id="ms-list-1"]/button
-    Select Checkbox               xpath://*[@id="ms-opt-1"]
-    #Select Checkbox              xpath://*[@id="ms-opt-2"]
+    Select Checkbox               xpath://*[@id="ms-opt-3"]
     Click Button                  xpath://*[@id="ms-list-2"]/button
-    Select Checkbox              xpath://*[@id="ms-opt-5"]
-    #Select Checkbox               xpath://*[@id="ms-opt-8"]
+    Select Checkbox              xpath://*[@id="ms-opt-6"]
     Click Element                 xpath://*[@id="rightpane"]
     sleep                         2
     Click Element                 xpath://*[@id="carSelect1"]
