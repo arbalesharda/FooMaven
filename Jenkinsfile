@@ -31,7 +31,11 @@ pipeline
                     }
                 }
            }
-
+            stage('Create coverage report') {
+                     steps {
+                         sh "mvn cobertura:cobertura"
+                          }
+                      }
            stage('API Testing with Newman') {
                  steps {
                       sh 'newman run Restful_Booker.postman_collection.json --environment Restful_Booker.postman_environment.json --reporters junit'
@@ -45,7 +49,7 @@ pipeline
             }
            stage('Robot Framework System tests with Selenium') {
                        steps {
-                           sh 'robot -d results --variable BROWSER:headlesschrome CarBooking.robot'
+                           sh 'robot -d results --variable BROWSER:headlesschrome Infotive.robot'
                        }
                        post {
                            always {
@@ -74,11 +78,10 @@ pipeline
       }
 
      post {
-              always {
-                 junit '**/TEST*.xml'
-                 emailext attachLog: true, attachmentsPattern: '**/TEST*xml',
-                 body: 'Bod-DAy!', recipientProviders: [culprits()], subject:
-                 '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
-              }
+             always {
+                     junit '**/*xml'
+                     step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
+
+             }
          }
-     }
+}
